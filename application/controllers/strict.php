@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Umum extends CI_Controller
+class Strict extends CI_Controller
 {
 
     /**
@@ -19,9 +19,16 @@ class Umum extends CI_Controller
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/userguide3/general/urls.html
      */
-    public function index()
+    public function juri()
     {
-        $this->load->view('public/template/header');
-        $this->load->view('public/pendaftaran');
+        $data['title'] = 'Input Penilaian';
+        $this->load->view('private/template/header', $data);
+        $this->load->view('private/juri');
+    }
+    public function rekap()
+    {
+        $data['title'] = 'Rekap Penilaian';
+        $this->load->view('private/template/header', $data);
+        $this->load->view('private/juri');
     }
 }
